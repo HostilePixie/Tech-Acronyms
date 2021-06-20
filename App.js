@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { View, ScrollView, Text } from "react-native";
+
+import acronyms from "./acronyms";
+import AcronymCard from "./AcronymCard";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={{ backgroundColor: "white" }}>
+      <Text
+        style={{
+          fontSize: 25,
+          alignSelf: "center",
+          fontWeight: "300",
+          marginBottom: 20,
+          marginTop: 45,
+          color: "black",
+        }}
+      >
+        Tech Acronyms:
+      </Text>
+      <ScrollView style={{ marginBottom: 110 }}>
+        {Object.keys(acronyms).map((acronym, index) => (
+          <AcronymCard label={acronym} text={acronyms[acronym]} key={index} />
+        ))}
+      </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
