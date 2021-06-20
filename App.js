@@ -35,7 +35,6 @@ export default function App() {
           <AcronymCard label={acronym} text={acronyms[acronym]} key={index} />
         ))}
       </ScrollView>
-      <StatusBar style="auto" />
     </View>
   );
 }
