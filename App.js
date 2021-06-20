@@ -20,6 +20,16 @@ export default function App() {
       >
         Tech Acronyms:
       </Text>
+      <Text
+        style={{
+          fontSize: 17,
+          marginBottom: 8,
+          fontStyle: "italic",
+          alignSelf: "center",
+        }}
+      >
+        Click on the acronym to view the abbreviation
+      </Text>
       <ScrollView style={{ marginBottom: 110 }}>
         {Object.keys(acronyms).map((acronym, index) => (
           <AcronymCard label={acronym} text={acronyms[acronym]} key={index} />
